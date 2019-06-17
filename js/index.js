@@ -41,17 +41,38 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-// let logo = document.getElementById("logo-img");
-// logo.setAttribute('src', siteContent["nav"]["img-src"]);
+let logo = document.getElementById("logo-img");
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // Set Nav
+
 document.getElementsByTagName('nav')[0].getElementsByTagName('a')[0].innerText = siteContent["nav"]["nav-item-1"];
 document.getElementsByTagName('nav')[0].getElementsByTagName('a')[1].innerText = siteContent["nav"]["nav-item-2"];
 document.getElementsByTagName('nav')[0].getElementsByTagName('a')[2].innerText = siteContent["nav"]["nav-item-3"];
 document.getElementsByTagName('nav')[0].getElementsByTagName('a')[3].innerText = siteContent["nav"]["nav-item-4"];
 document.getElementsByTagName('nav')[0].getElementsByTagName('a')[4].innerText = siteContent["nav"]["nav-item-5"];
 document.getElementsByTagName('nav')[0].getElementsByTagName('a')[5].innerText = siteContent["nav"]["nav-item-6"];
+const nav = document.querySelector('nav');
+[...nav.children].forEach((current) => {
+  current.setAttribute('style', 'color: green');
+  });
 
+// document.getElementsByTagName('nav')[0].getElementsByTagName('a')[6].appendChild(text, "LET");
+var newNavItem2 = document.createElement("a");
+nav.prepend(newNavItem2);
+
+var newNavItem1 = document.createElement("a");
+newNavItem1.innerHTML = 'PRIOR';
+nav.prepend(newNavItem1);
+
+var newNavItem1 = document.createElement("a");
+newNavItem1.innerHTML = 'AFTER';
+nav.append(newNavItem1);
+
+document.querySelector('newNavItem1');
+[...nav.children].forEach((current) => {
+  current.setAttribute('style', 'color: green');
+  });
 
 // DOM is Awesome
 document.getElementsByTagName('h1')[0].innerText=siteContent['cta']['h1'];
